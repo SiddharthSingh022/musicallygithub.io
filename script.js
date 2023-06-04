@@ -6,7 +6,7 @@ let myProgressBar = document.getElementById('myProgressBar');
 let gif = document.getElementById('gif');
 let songItem = Array.from(document.getElementsByClassName('songItem'));
 let songs = [
-  { songName: "Tujhe Sochta hoon", filePath: "songs/1.mp3", coverPath: "covers/1.jpg" },
+  { songName: "Tujhe Sochta hoon", filePath: "songs/1.mp3", coverPath: "1.jpg" },
   { songName: "Kya Mujhe Pyar Hai", filePath: "songs/2.mp3", coverPath: "covers/2.jpg" },
   { songName: "Masakali", filePath: "songs/3.mp3", coverPath: "covers/3.jpg" },
   { songName: "Dil Ibaadat", filePath: "songs/4.mp3", coverPath: "covers/4.jpg" },
