@@ -1,0 +1,143 @@
+body{
+    background-color: rgb(127, 91, 235);
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+nav{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;   
+}
+nav ul{
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    height: 65px;
+    background-color: black;
+    color: aliceblue;
+}
+nav ul li{
+    padding: 0 12px;
+}
+.brand img{
+    width: 47px;
+    padding: 0 8px;
+    border-radius: 433px;
+}
+.brand {
+    display: flex;
+    align-items: center;
+    font-weight: bolder;
+    font-size: 1.3rem;
+}
+.container{
+    min-height:72vh;
+    background-color: black;
+    color: beige;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    display: flex;
+    width: 70%;
+    margin: 23px auto;
+    border-radius: 12px;
+    padding: 34px;
+    background-image: url('download.jpg');
+}
+.bottom {
+    position:sticky;
+    height: 130px;
+    background-color: black;
+    color: azure;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.icons{
+    margin-top: 14px;
+    cursor: pointer;
+}
+#myProgressBar{
+    width: 80vw;
+    text-align: center;
+    cursor: pointer;
+}
+.songItemcontainer{
+    margin-top: 60px;
+}
+.songItem{
+    height: 50px;
+    display: flex;
+    background-color: white;
+    
+    color: black;
+    margin: 12px 0;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 34px;
+}
+.songItem img{
+    
+    width: 50px;
+    margin: 0 23px;
+    border-radius: 34px;
+}
+.timestamp{
+    width: 43;
+    margin: 0 23px;
+}
+.timestamp{
+    margin: 0 23px;
+    cursor: pointer;
+}
+.songInfo img{
+    opacity: 0;
+    transition: opacity 0.3s ease-in;
+}
+.mb-3{
+    position:sticky;
+    height: 50px;
+    background-color:rgb(2, 2, 3);
+    color: rgb(250, 251, 251);
+    bottom: 0;
+    display: flex;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.mb-3_form-check{
+    position:sticky;
+    padding: 10px 10px 10px;
+    /* height: 130px; */
+    background-color: rgb(4, 3, 7);
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+.slideshow {
+    width: 100%;
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .slideshow img {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
+  
+  .slideshow img.active {
+    opacity: 1;
+  }
+  
