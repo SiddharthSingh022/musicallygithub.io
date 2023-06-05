@@ -6,17 +6,17 @@ let myProgressBar = document.getElementById('myProgressBar');
 let gif = document.getElementById('gif');
 let songItem = Array.from(document.getElementsByClassName('songItem'));
 let songs = [
-  { songName: "Tujhe Sochta hoon", filePath: "songs/1.mp3", coverPath: "1.jpg" },
-  { songName: "Kya Mujhe Pyar Hai", filePath: "songs/2.mp3", coverPath: "2.jpg" },
-  { songName: "Masakali", filePath: "songs/3.mp3", coverPath: "3.jpg" },
-  { songName: "Dil Ibaadat", filePath: "songs/4.mp3", coverPath: "1.jpg" },
-  { songName: "Tum Ho", filePath: "songs/5.mp3", coverPath: "5.jpg" },
-  { songName: "Tujhe Bula Diya", filePath: "songs/6.mp3", coverPath: "6.jpg" },
-  { songName: "Dooriya", filePath: "songs/7.mp3", coverPath: "7.jpg" },
-  { songName: "Tu Hi Haqeeqat", filePath: "songs/8.mp3", coverPath: "8.jpg" },
-  { songName: "Kudha Jaane", filePath: "songs/9.mp3", coverPath: "9.jpg" },
-  { songName: "Zara Sa", filePath: "songs/10.mp3", coverPath: "10.jpg" },
-  { songName: "Tu Hi Meri Shab Hai", filePath: "songs/11.mp3", coverPath: "1.jpg" },
+  { songName: "Tujhe Sochta hoon", filePath: "songs/1.mp3", coverPath: "covers/1.jpg" },
+  { songName: "Kya Mujhe Pyar Hai", filePath: "songs/2.mp3", coverPath: "covers/2.jpg" },
+  { songName: "Masakali", filePath: "songs/3.mp3", coverPath: "covers/3.jpg" },
+  { songName: "Dil Ibaadat", filePath: "songs/4.mp3", coverPath: "covers/4.jpg" },
+  { songName: "Tum Ho", filePath: "songs/5.mp3", coverPath: "covers/5.jpg" },
+  { songName: "Tujhe Bula Diya", filePath: "songs/6.mp3", coverPath: "covers/6.jpg" },
+  { songName: "Dooriya", filePath: "songs/7.mp3", coverPath: "covers/7.jpg" },
+  { songName: "Tu Hi Haqeeqat", filePath: "songs/8.mp3", coverPath: "covers/8.jpg" },
+  { songName: "Kudha Jaane", filePath: "songs/9.mp3", coverPath: "covers/9.jpg" },
+  { songName: "Zara Sa", filePath: "songs/10.mp3", coverPath: "covers/10.jpg" },
+  { songName: "Tu Hi Meri Shab Hai", filePath: "songs/11.mp3", coverPath: "covers/11.jpg" },
 ];
 
 $(document).ready(function() {
@@ -39,6 +39,29 @@ $(document).ready(function() {
 songItem.forEach((element, i) => {
   element.getElementsByTagName("img")[0].src = songs[i].coverPath;
   element.getElementsByClassName("songName")[0].innerText = songs[i].songName;
+});
+
+audioElement.addEventListener('ended', () => {
+  // Increment the song index
+  songIndex = (songIndex + 1) % songs.length;
+
+  // Update the audio source and play the next song
+  audioElement.src = songs[songIndex].filePath;
+  audioElement.currentTime = 0;
+  audioElement.play();
+
+  // Update the song name and cover image
+  const currentSongItem = songItem[songIndex];
+  const currentSongName = currentSongItem.getElementsByClassName('songName')[0];
+  const currentCoverImage = currentSongItem.getElementsByTagName('img')[0];
+  currentSongName.innerText = songs[songIndex].songName;
+  currentCoverImage.src = songs[songIndex].coverPath;
+
+  // Highlight the current song in the playlist
+  makeAllPlays();
+  const currentSongPlayIcon = currentSongItem.getElementsByClassName('songItemPlay')[0];
+  currentSongPlayIcon.classList.remove('fa-play-circle');
+  currentSongPlayIcon.classList.add('fa-pause-circle');
 });
 
 audioElement.play();
